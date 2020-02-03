@@ -10,9 +10,8 @@ public class Job extends AbstractEntity{
     @ManyToOne
     private Employer employer;
 
-    @JoinColumn
-    @OneToMany
-    private List<Skill> skills = new ArrayList<>();
+    @ManyToMany
+    public List<Skill> skills = new ArrayList<>();
 
     public Job() {
     }

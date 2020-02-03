@@ -59,7 +59,8 @@ public class HomeController {
         }
 
         Optional<Employer> selectedEmployer = employerRepository.findById(employerId);
-        Iterable<Skill> selectedSkills = skillRepository.findAllById(skills);
+        List<Skill> selectedSkills = (List<Skill>) skillRepository.findAllById(skills);
+        newJob.setSkills(selectedSkills);
         newJob.setEmployer(selectedEmployer.get());
         jobRepository.save(newJob);
 

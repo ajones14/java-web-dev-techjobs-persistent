@@ -11,3 +11,6 @@ WHERE location = "St. Louis, Mo";
 DROP TABLE job;
 
 ## Part 4: Test it with SQL
+SELECT name, description
+FROM skill
+INNER JOIN job_skills ON job_skills.skills_id = skill.id;
